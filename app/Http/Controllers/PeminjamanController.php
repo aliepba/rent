@@ -57,7 +57,8 @@ class PeminjamanController extends Controller
             
             DB::commit();
 
-            $emp = MtPegawai::find(Auth::user()->id);
+            $emp = MtPegawai::where('user_id', Auth::user()->id)->first();
+// dd($emp);
             $head = MtHeadDepartment::find($emp->department_id);
             $HeadDep = MtPegawai::find($head->employee_id);
             $userEmail = User::find($HeadDep->user_id);
