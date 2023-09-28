@@ -114,7 +114,7 @@ class PeminjamanController extends Controller
             $barang->stock = $barang->stock + $pinjam->jumlah;
             $barang->save();
 
-            $emp = MtPegawai::find($pinjam->user_id);
+            $emp = MtPegawai::where('user_id', $pinjam->user_id)->first();
             $head = MtHeadDepartment::find($emp->department_id);
             $HeadDep = MtPegawai::find($head->employee_id);
             $userEmail = User::find($HeadDep->user_id);
