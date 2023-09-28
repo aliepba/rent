@@ -52,7 +52,7 @@
                                     </a>
                                     @else
                                     @if ($item->is_done == false)
-                                    <a href="{{route('pinjam.approve', $item->id)}}" class="btn btn-sm btn-primary">
+                                    <a href="{{route('pinjam.approve', $item->id)}}" class="btn btn-sm btn-success">
                                         <i class="fa fa-check" aria-hidden="true"> Accept Pengembalian</i>
                                     </a>
                                     @else
